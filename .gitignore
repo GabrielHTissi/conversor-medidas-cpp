@@ -1,0 +1,9 @@
+# Executáveis
+main
+medidas
+*.exe
+*.out
+
+# Pastas de Debug do Mac
+*.dSYM/
+.vscode/
