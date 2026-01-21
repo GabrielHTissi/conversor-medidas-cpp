@@ -40,6 +40,7 @@ std::cout << "O valor em milimetros é: " << std::fixed << std::setprecision(4) 
     break;
 
 default:
+std::cout << "OPÇÃO INVÁLIDA. POR FAVOR, ESCOLHA 1 OU 2." << std::endl;
     break;
 }
 
