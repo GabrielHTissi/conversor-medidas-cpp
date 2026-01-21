@@ -5,6 +5,11 @@
 #include <string>//manipulação de strings
 #include <algorithm>//funções de algoritmos padrão
 
+double processarEntrada(std::string texto) {
+    std::replace(texto.begin(), texto.end(), ',', '.');
+    return std::stod(texto);
+}
+
 int main() { 
 
 double medidaMM, medidaPG; //ocupa o dobro de memória, mas é muito mais preciso que o float
@@ -22,9 +27,7 @@ switch (opcao){
 case 1: 
 std::cout << "DIGITE UMA MEDIDA EM MILIMETROS: ";//solicita ao usuário que insira uma medida em milímetros
 std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
-std::setprecision(4);//define a precisão dos números exibidos/* code */
-std::replace(entradaTexto.begin(), entradaTexto.end(), ',', '.');//substitui vírgulas por pontos na string de entrada para garantir a conversão correta
-medidaMM = std::stod(entradaTexto);
+medidaMM = processarEntrada(entradaTexto);
 medidaPG=medidaMM/CONVERSAO;//converte a medida de milímetros para polegadas
 std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;//exibe o valor convertido em polegadas com 4 casas decimais
    break;
@@ -32,9 +35,7 @@ std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) <
 case 2: 
 std::cout << "DIGITE UMA MEDIDA EM POLEGADAS: ";//solicita ao usuário que insira uma medida em milímetros
 std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
-std::setprecision(4);//define a precisão dos números exibidos* code */
-std::replace(entradaTexto.begin(), entradaTexto.end(), ',', '.');//substitui vírgulas por pontos na string de entrada para garantir a conversão correta
-medidaPG = std::stod(entradaTexto);
+medidaPG = processarEntrada(entradaTexto);
 medidaMM=medidaPG * CONVERSAO;//converte a medida de polegadas para milímetros
 std::cout << "O valor em milimetros é: " << std::fixed << std::setprecision(4) << medidaMM << " mm" << std::endl;
     break;
