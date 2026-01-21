@@ -4,6 +4,7 @@
 #include <iomanip>//formatação de numeros
 #include <string>//manipulação de strings
 #include <algorithm>//funções de algoritmos padrão
+#include <limits>//para manipulação de limites de stream
 
 double processarEntrada(std::string texto) {
     std::replace(texto.begin(), texto.end(), ',', '.');
@@ -26,8 +27,16 @@ std::cout << "0 - Sair" << std::endl;
 std::cout << "Escolhe uma opção: " << std::endl;
 std::cin >> opcao;
 
+if (std::cin.fail()) {
+    std::cin.clear(); // Limpa o estado de erro
+    // Descarta tudo o que foi digitado de errado até o próximo "Enter"
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout << "ERRO: Entrada invalida. Digite apenas numeros." << std::endl;
+    opcao = -1; // TRAVA DE SEGURANÇA: Garante que o while la embaixo nao saia do programa
+    continue; // Volta para o início do loop
+}
 if(opcao == 0) {
-    std::cout << "saindo do pograma..." << std::endl;
+    std::cout << "saindo do pograma..." << std::endl;//mensagem de saída
     break;}
 
 switch (opcao){
@@ -53,7 +62,7 @@ std::cout << "OPÇÃO INVÁLIDA. POR FAVOR, ESCOLHA 1 OU 2." << std::endl;
 }
 std::cout << "----------------------------------------------"<< std::endl;
 
- } while (opcao != 0);
+ } while (opcao != 0);//loop continua até o usuário escolher sair
 
 return 0;
 }
