@@ -8,7 +8,7 @@
 double processarEntrada(std::string texto) {
     std::replace(texto.begin(), texto.end(), ',', '.');
     return std::stod(texto);
-}
+}//função para processar a entrada do usuário, substituindo vírgulas por pontos e convertendo a string para double
 
 int main() { 
 
@@ -17,17 +17,24 @@ const float CONVERSAO = 25.4;//constante de conversão de polegadas para milíme
 int opcao;//variável para armazenar a opção do usuário
 std::string entradaTexto;//string para armazenar a entrada do usuário
 
+do {
+
 std::cout << "----- CONVERSOR TECNICO PCP -----" << std::endl;
 std::cout << "1 - Milimetros para polegadas" << std::endl;
 std::cout << "2 - Polegadas para milimetros" << std::endl;
+std::cout << "0 - Sair" << std::endl;
 std::cout << "Escolhe uma opção: " << std::endl;
 std::cin >> opcao;
+
+if(opcao == 0) {
+    std::cout << "saindo do pograma..." << std::endl;
+    break;}
 
 switch (opcao){
 case 1: 
 std::cout << "DIGITE UMA MEDIDA EM MILIMETROS: ";//solicita ao usuário que insira uma medida em milímetros
 std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
-medidaMM = processarEntrada(entradaTexto);
+medidaMM = processarEntrada(entradaTexto);//converte a string para double
 medidaPG=medidaMM/CONVERSAO;//converte a medida de milímetros para polegadas
 std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;//exibe o valor convertido em polegadas com 4 casas decimais
    break;
@@ -44,7 +51,9 @@ default:
 std::cout << "OPÇÃO INVÁLIDA. POR FAVOR, ESCOLHA 1 OU 2." << std::endl;
     break;
 }
+std::cout << "----------------------------------------------"<< std::endl;
 
+ } while (opcao != 0);
 
 return 0;
 }
