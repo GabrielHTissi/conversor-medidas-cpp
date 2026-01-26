@@ -15,10 +15,10 @@ double medidaMM, medidaPG; //ocupa o dobro de memória, mas é muito mais precis
 const float CONVERSAO = 25.4;//constante de conversão de polegadas para milímetros(1 polegada = 25,4 mm)
 int opcao;//variável para armazenar a opção do usuário
 std::string entradaTexto;//string para armazenar a entrada do usuário
+Conversor meuConversor;
 
 do {
-limparTela();//chama a função para limpar a tela
-std::cout << "----------------------------------------------" << std::endl;
+meuConversor.limparTela();
 std::cout << "------------ CONVERSOR TECNICO PCP -----------" << std::endl;
 std::cout << "1 - Milimetros para polegadas" << std::endl;
 std::cout << "2 - Polegadas para milimetros" << std::endl;
@@ -35,30 +35,30 @@ if (std::cin.fail()) {
     continue; // Volta para o início do loop
 }
 if(opcao == 0) {
-    limparTela();
+    meuConversor.limparTela();
     std::cout << "saindo do pograma..." << std::endl;//mensagem de saída
     break;}
 
 switch (opcao){
-case 1: 
-std::cout << "DIGITE UMA MEDIDA EM MILIMETROS: ";//solicita ao usuário que insira uma medida em milímetros
-std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
-medidaMM = processarEntrada(entradaTexto);//converte a string para double
-medidaPG=medidaMM/CONVERSAO;//converte a medida de milímetros para polegadas
-std::cout << "----------------------------------------------" << std::endl;
-std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;
-salvarNoLog(medidaMM, "mm", medidaPG, "pol"); // Grava no arquivo    
-break;
-
-case 2: 
-std::cout << "DIGITE UMA MEDIDA EM POLEGADAS: ";//solicita ao usuário que insira uma medida em milímetros
-std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
-medidaPG = processarEntrada(entradaTexto);
-medidaMM=medidaPG * CONVERSAO;//converte a medida de polegadas para milímetros
-std::cout << "O valor em milimetros é: " << std::fixed << std::setprecision(4) << medidaMM << " mm" << std::endl;
-salvarNoLog(medidaPG, "pol", medidaMM, "mm"); // Grava no arquivon(4) << medidaMM << " mm" << std::endl;
+case 1: // MM para POL
+    std::cout << "DIGITE MM: ";
+    std::cin >> entradaTexto;
+    medidaMM = meuConversor.processarEntrada(entradaTexto);
+    medidaPG = meuConversor.mmParaPol(medidaMM);
+    std::cout << "----------------------------------------------"<< std::endl;
+    std::cout << "Resultado: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;
+    meuConversor.salvarNoLog(medidaMM, "mm", medidaPG, "pol");
     break;
 
+case 2: // POL para MM
+    std::cout << "DIGITE POL: ";
+    std::cin >> entradaTexto;
+    medidaPG = meuConversor.processarEntrada(entradaTexto);
+    medidaMM = meuConversor.polParaMm(medidaPG);
+    std::cout << "----------------------------------------------"<< std::endl; 
+    std::cout << "Resultado: " << std::fixed << std::setprecision(4) << medidaMM << " mm" << std::endl;
+    meuConversor.salvarNoLog(medidaPG, "pol", medidaMM, "mm");
+    break; // Adicionado para não cair no default
 default:
 std::cout << "OPÇÃO INVÁLIDA. POR FAVOR, ESCOLHA 1 OU 2." << std::endl;
     break;
@@ -69,3 +69,4 @@ std::cout << "----------------------------------------------"<< std::endl;
 
 return 0;
 }
+//g++ main.cpp conversores.cpp -o main && ./main (pra rodar no terminal)

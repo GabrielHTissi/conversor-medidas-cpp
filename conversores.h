@@ -1,36 +1,19 @@
 #ifndef CONVERSORES_H
-#include <algorithm>//funções de algoritmos padrão
-#include <fstream>//manipulação de arquivos
+#define CONVERSORES_H
 
-const double FATOR = 25.4;//constante de conversão de polegadas para milímetros(1 polegada = 25,4 mm)
+#include <string>
 
-double processarEntrada(std::string texto) {
-    std::replace(texto.begin(), texto.end(), ',', '.');
-    return std::stod(texto);
-}
+class Conversor {
+private:
+    const double FATOR = 25.4; // Atributo: O dado fica "escondido" e protegido
 
-double mmParaPol(double mm) {
-    return mm / FATOR;
-}
+public:
+    // Métodos: O que o objeto sabe fazer
+    void limparTela(); 
+    double processarEntrada(std::string texto);
+    double mmParaPol(double mm);
+    double polParaMm(double pol);
+    void salvarNoLog(double vOrigem, std::string uOrigem, double vDestino, std::string uDestino);
+};
 
-double polParaMm(double pol) {
-    return pol * FATOR;
-}
-void limparTela() {
-    // No Mac/Linux usamos "clear", no Windows seria "cls"
-    std::system("clear");
-}
-void salvarNoLog(double valorOrigem, std::string unidadeOrigem, double valorDestino, std::string unidadeDestino) {
-    // Abre (ou cria) o arquivo historico.txt para adicionar texto no final
-    std::ofstream arquivoLog("historico.txt", std::ios::app);
-
-    if (arquivoLog.is_open()) {
-        arquivoLog << "[" << valorOrigem << " " << unidadeOrigem << "] -> "
-                   << "[" << valorDestino << " " << unidadeDestino << "]" << std::endl;
-        arquivoLog.close();
-    } else {
-        std::cerr << "Erro ao abrir o arquivo de log!" << std::endl;
-    }
-}
-
-#endif // CONVERSORES_H
+#endif
