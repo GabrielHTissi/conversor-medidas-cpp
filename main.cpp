@@ -6,6 +6,7 @@
 #include <algorithm>//funções de algoritmos padrão
 #include <limits>//para manipulação de limites de stream
 #include "conversores.h"//inclusão do arquivo de cabeçalho com as funções de conversão
+#include <cstdlib>//para usar o comando system("clear") ou system("cls")
 
 
 int main() { 
@@ -16,8 +17,9 @@ int opcao;//variável para armazenar a opção do usuário
 std::string entradaTexto;//string para armazenar a entrada do usuário
 
 do {
-
-std::cout << "----- CONVERSOR TECNICO PCP -----" << std::endl;
+limparTela();//chama a função para limpar a tela
+std::cout << "----------------------------------------------" << std::endl;
+std::cout << "------------ CONVERSOR TECNICO PCP -----------" << std::endl;
 std::cout << "1 - Milimetros para polegadas" << std::endl;
 std::cout << "2 - Polegadas para milimetros" << std::endl;
 std::cout << "0 - Sair" << std::endl;
@@ -42,9 +44,9 @@ std::cout << "DIGITE UMA MEDIDA EM MILIMETROS: ";//solicita ao usuário que insi
 std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
 medidaMM = processarEntrada(entradaTexto);//converte a string para double
 medidaPG=medidaMM/CONVERSAO;//converte a medida de milímetros para polegadas
-std::cout << "---------------------------" << std::endl;
+std::cout << "----------------------------------------------" << std::endl;
 std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;//exibe o valor convertido em polegadas com 4 casas decimais
-   break;
+    break;
 
 case 2: 
 std::cout << "DIGITE UMA MEDIDA EM POLEGADAS: ";//solicita ao usuário que insira uma medida em milímetros
