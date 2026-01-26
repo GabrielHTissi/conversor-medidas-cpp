@@ -5,11 +5,8 @@
 #include <string>//manipulação de strings
 #include <algorithm>//funções de algoritmos padrão
 #include <limits>//para manipulação de limites de stream
+#include "conversores.h"//inclusão do arquivo de cabeçalho com as funções de conversão
 
-double processarEntrada(std::string texto) {
-    std::replace(texto.begin(), texto.end(), ',', '.');
-    return std::stod(texto);
-}//função para processar a entrada do usuário, substituindo vírgulas por pontos e convertendo a string para double
 
 int main() { 
 
@@ -24,7 +21,7 @@ std::cout << "----- CONVERSOR TECNICO PCP -----" << std::endl;
 std::cout << "1 - Milimetros para polegadas" << std::endl;
 std::cout << "2 - Polegadas para milimetros" << std::endl;
 std::cout << "0 - Sair" << std::endl;
-std::cout << "Escolhe uma opção: " << std::endl;
+std::cout << "Escolha uma opção e precione enter: " << std::endl;
 std::cin >> opcao;
 
 if (std::cin.fail()) {
@@ -45,6 +42,7 @@ std::cout << "DIGITE UMA MEDIDA EM MILIMETROS: ";//solicita ao usuário que insi
 std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
 medidaMM = processarEntrada(entradaTexto);//converte a string para double
 medidaPG=medidaMM/CONVERSAO;//converte a medida de milímetros para polegadas
+std::cout << "---------------------------" << std::endl;
 std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;//exibe o valor convertido em polegadas com 4 casas decimais
    break;
 
