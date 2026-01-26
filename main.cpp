@@ -35,6 +35,7 @@ if (std::cin.fail()) {
     continue; // Volta para o início do loop
 }
 if(opcao == 0) {
+    limparTela();
     std::cout << "saindo do pograma..." << std::endl;//mensagem de saída
     break;}
 
@@ -45,8 +46,9 @@ std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
 medidaMM = processarEntrada(entradaTexto);//converte a string para double
 medidaPG=medidaMM/CONVERSAO;//converte a medida de milímetros para polegadas
 std::cout << "----------------------------------------------" << std::endl;
-std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;//exibe o valor convertido em polegadas com 4 casas decimais
-    break;
+std::cout << "O valor em polegadas é: " << std::fixed << std::setprecision(4) << medidaPG << " pol" << std::endl;
+salvarNoLog(medidaMM, "mm", medidaPG, "pol"); // Grava no arquivo    
+break;
 
 case 2: 
 std::cout << "DIGITE UMA MEDIDA EM POLEGADAS: ";//solicita ao usuário que insira uma medida em milímetros
@@ -54,6 +56,7 @@ std::cin >> entradaTexto;//lê a medida em milímetros fornecida pelo usuárioS
 medidaPG = processarEntrada(entradaTexto);
 medidaMM=medidaPG * CONVERSAO;//converte a medida de polegadas para milímetros
 std::cout << "O valor em milimetros é: " << std::fixed << std::setprecision(4) << medidaMM << " mm" << std::endl;
+salvarNoLog(medidaPG, "pol", medidaMM, "mm"); // Grava no arquivon(4) << medidaMM << " mm" << std::endl;
     break;
 
 default:
