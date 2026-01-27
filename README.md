@@ -1,17 +1,26 @@
-# Conversor de Medidas Técnicas (C++)
+# Conversor Técnico PCP
 
-## 📌 Sobre o Projeto
-Este projeto nasceu da necessidade de agilizar cálculos de conversão e precisão técnica no setor de PCP (Planejamento e Controle de Produção) da empresa MHM Metalúrgica. O objetivo é reduzir erros manuais na leitura de desenhos técnicos e na preparação de ordens de produção.
+Este projeto foi desenvolvido para facilitar a conversão de medidas técnicas no setor de PCP, saindo de um script de terminal para uma aplicação desktop robusta.
 
-## 🚀 Tecnologias e Conceitos
-* **Linguagem:** C++ (Padrão C++17)
-* **Bibliotecas:** `iostream`, `iomanip`, `string` , 'algorith' 
-* **Conceitos:** Lógica de programação, manipulação de tipos de dados (`double`, `const`) e formatação de precisão decimal.
+## 🚀 Evolução do Projeto
+O projeto passou por três fases principais de engenharia:
+1. **Procedural:** Script básico de conversão no terminal.
+2. **Modular & POO:** Separação de lógica em arquivos `.h` e `.cpp` e uso de Classes.
+3. **GUI (Qt):** Implementação de interface gráfica profissional e persistência de dados (logs).
 
-## 🎯 Evolução
-Este repositório faz parte dos meus estudos no 4º semestre de Engenharia de Software (Católica SC), focado em aplicar conceitos acadêmicos em soluções reais do mercado industrial.
+## 🛠️ Tecnologias Utilizadas
+- **Linguagem:** C++20
+- **Framework:** Qt 6 (Widgets)
+- **Build System:** CMake
+- **Versionamento:** Git/GitHub
 
-## 🛠️ Como Executar
-1. Clone o repositório: `git clone https://github.com/seu-usuario/conversor-medidas-cpp.git`
-2. Compile o código: `clang++ main.cpp -o conversor`
-3. Execute: `./conversor`
+## 📐 Lógica de Engenharia
+As conversões utilizam precisão de ponto flutuante duplo (double) para garantir a integridade das peças:
+- Milímetros para Polegadas: $$medidaPG = \frac{medidaMM}{25.4}$$
+- Polegadas para Milímetros: $$medidaMM = medidaPG \cdot 25.4$$
+
+## 📋 Funcionalidades
+- [x] Interface Gráfica Intuitiva.
+- [x] Tratamento de entradas (vírgula por ponto automático).
+- [x] Log de histórico de conversões em arquivo `.txt`.
+- [x] Arquitetura Orientada a Objetos para fácil manutenção.

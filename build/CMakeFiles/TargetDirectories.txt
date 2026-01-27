@@ -1,0 +1,5 @@
+/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/CMakeFiles/ConversorPCP.dir
+/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/CMakeFiles/edit_cache.dir
+/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/CMakeFiles/rebuild_cache.dir
+/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/CMakeFiles/ConversorPCP_autogen_timestamp_deps.dir
+/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/CMakeFiles/ConversorPCP_autogen.dir

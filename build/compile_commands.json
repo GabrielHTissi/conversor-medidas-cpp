@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I\"/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/ConversorPCP_autogen/include\" -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/lib/QtCore.framework/Headers -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/ConversorPCP.dir/ConversorPCP_autogen/mocs_compilation.cpp.o -c \"/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/ConversorPCP_autogen/mocs_compilation.cpp\"",
+  "file": "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/ConversorPCP_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/ConversorPCP.dir/ConversorPCP_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I\"/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/ConversorPCP_autogen/include\" -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/lib/QtCore.framework/Headers -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/ConversorPCP.dir/main.cpp.o -c \"/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/main.cpp\"",
+  "file": "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/main.cpp",
+  "output": "CMakeFiles/ConversorPCP.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I\"/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/ConversorPCP_autogen/include\" -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/lib/QtCore.framework/Headers -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/ConversorPCP.dir/conversores.cpp.o -c \"/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/conversores.cpp\"",
+  "file": "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/conversores.cpp",
+  "output": "CMakeFiles/ConversorPCP.dir/conversores.cpp.o"
+}
+]
