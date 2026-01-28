@@ -1961,6 +1961,7 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
   /opt/homebrew/lib/QtCore.framework/Headers/qglobalstatic.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qhash.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qhashfunctions.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/qiodevice.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qiodevicebase.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qiterable.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qiterator.h \
@@ -2034,6 +2035,7 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
   /opt/homebrew/lib/QtCore.framework/Headers/qtversionchecks.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qtypeinfo.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qtypes.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/qurl.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qutf8stringview.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qvariant.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qvarlengtharray.h \
@@ -2057,20 +2059,43 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
   /opt/homebrew/lib/QtGui.framework/Headers/qkeysequence.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qpaintdevice.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qpalette.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/qpen.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/qpicture.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qpixelformat.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qpixmap.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qpolygon.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qregion.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qrgb.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qrgba64.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/qtextcursor.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/qtextdocument.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/qtextformat.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/qtextoption.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qtgui-config.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qtguiexports.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qtguiglobal.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qtransform.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qwindowdefs.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QApplication \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QLabel \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QLineEdit \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QPushButton \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QVBoxLayout \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qabstractbutton.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qapplication.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qboxlayout.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qframe.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qgridlayout.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qlabel.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qlayout.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qlayoutitem.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qlineedit.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qpushbutton.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qsizepolicy.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qtwidgets-config.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qtwidgetsexports.h \
@@ -2078,9 +2103,25 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
   /opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h
 
 
+/opt/homebrew/lib/QtWidgets.framework/Headers/qlayoutitem.h:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/qlabel.h:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/qgridlayout.h:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/qboxlayout.h:
+
 /opt/homebrew/lib/QtWidgets.framework/Headers/qapplication.h:
 
+/opt/homebrew/lib/QtWidgets.framework/Headers/qabstractbutton.h:
+
 /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/QPushButton:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/QLabel:
 
 /opt/homebrew/lib/QtWidgets.framework/Headers/QApplication:
 
@@ -2088,11 +2129,21 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 
 /opt/homebrew/lib/QtGui.framework/Headers/qtguiexports.h:
 
+/opt/homebrew/lib/QtGui.framework/Headers/qtextformat.h:
+
+/opt/homebrew/lib/QtGui.framework/Headers/qtextdocument.h:
+
+/opt/homebrew/lib/QtGui.framework/Headers/qtextcursor.h:
+
 /opt/homebrew/lib/QtGui.framework/Headers/qrgb.h:
 
 /opt/homebrew/lib/QtGui.framework/Headers/qregion.h:
 
 /opt/homebrew/lib/QtGui.framework/Headers/qpixelformat.h:
+
+/opt/homebrew/lib/QtGui.framework/Headers/qpicture.h:
+
+/opt/homebrew/lib/QtGui.framework/Headers/qpen.h:
 
 /opt/homebrew/lib/QtGui.framework/Headers/qpalette.h:
 
@@ -2392,6 +2443,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigset_t.h:
 
+/opt/homebrew/lib/QtCore.framework/Headers/qiodevice.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigaltstack.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_seek_set.h:
@@ -2594,6 +2647,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm:
 
+/opt/homebrew/lib/QtGui.framework/Headers/qtextoption.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__verbose_abort:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/vector_bool.h:
@@ -2605,6 +2660,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/swap.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/pmr.h:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/unreachable.h:
 
@@ -2841,6 +2898,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_wchar_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/concepts.h:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/is_valid.h:
 
@@ -3220,6 +3279,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h:
 
+/opt/homebrew/lib/QtWidgets.framework/Headers/qlayout.h:
+
 /opt/homebrew/lib/cmake/Qt6/Qt6Dependencies.cmake:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/move_sentinel.h:
@@ -3295,6 +3356,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/invoke.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/QLineEdit:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/accumulate.h:
 
@@ -3574,6 +3637,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare.h:
 
+/opt/homebrew/lib/QtWidgets.framework/Headers/qpushbutton.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_function.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/roots.h:
@@ -3818,6 +3883,8 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: /Users/gabrieltissi/Geral\ do\ gabriel/P
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/noexcept_move_assign_container.h:
 
+/opt/homebrew/lib/QtWidgets.framework/Headers/QVBoxLayout:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_string.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_pod.h:
@@ -3978,6 +4045,8 @@ ConversorPCP_autogen/mocs_compilation.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_pointer.h:
 
+/opt/homebrew/lib/QtWidgets.framework/Headers/qframe.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/arm/_OSByteOrder.h:
@@ -3991,6 +4060,8 @@ ConversorPCP_autogen/mocs_compilation.cpp:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdint.h:
 
 /opt/homebrew/lib/cmake/Qt6/Qt6ConfigVersion.cmake:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/qlineedit.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/support/bsd_like.h:
 
@@ -4031,6 +4102,8 @@ ConversorPCP_autogen/mocs_compilation.cpp:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/void_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_iterator_concept.h:
+
+/opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/dangling.h:
 
@@ -4121,6 +4194,8 @@ ConversorPCP_autogen/mocs_compilation.cpp:
 /opt/homebrew/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
 
 /opt/homebrew/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
+
+/opt/homebrew/lib/QtCore.framework/Headers/qurl.h:
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake:
 

@@ -1,7 +1,7 @@
-#ifndef CONVERSORES_H
-#define CONVERSORES_H
-
-#include <string>
+#ifndef CONVERSORES_H// Proteção contra inclusão múltipla
+#define CONVERSORES_H// Proteção contra inclusão múltipla
+#include <ctime>// Necessário para std::time_t
+#include <string>// Necessário para std::string
 
 class Conversor {
 private:
