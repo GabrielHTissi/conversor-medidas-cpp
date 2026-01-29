@@ -13,6 +13,13 @@ double Conversor::processarEntrada(std::string texto) {
         return 0.0;
     }
 }
+double Conversor::cmParaPol(double cm) {
+    return cm / 2.54; // Cálculo direto para centímetros
+}
+
+double Conversor::polParaCm(double pol) {
+    return pol * 2.54;
+}
 
 double Conversor::mmParaPol(double mm) { return mm / FATOR; }
 double Conversor::polParaMm(double pol) { return pol * FATOR; }

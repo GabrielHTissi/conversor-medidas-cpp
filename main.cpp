@@ -34,6 +34,10 @@ public:
         connect(btnParaPol, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaPol);
         connect(btnParaMm, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaMm);
         connect(campoEntrada, &QLineEdit::returnPressed, this, &JanelaConversor::aoConverterParaPol);
+
+        QPushButton *btnParaCm = new QPushButton("Converter para Centímetros", this);
+    layout->addWidget(btnParaCm);
+    connect(btnParaCm, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaCm);
     } // Fim do Construtor
 
 private:
@@ -77,6 +81,20 @@ private slots:
         labelResultado->setText("Resultado: " + QString::number(mm, 'f', 4) + " mm");
         motor.salvarNoLog(valor, "pol", mm, "mm");
     }
+    void aoConverterParaCm() {
+    QString entradaStr = campoEntrada->text();
+    bool ok;
+    double valor = entradaStr.replace(",", ".").toDouble(&ok);
+    
+    if (!ok || entradaStr.isEmpty()) {
+        QMessageBox::warning(this, "Erro", "Digite um número válido.");
+        return;
+    }
+
+    double cm = motor.polParaCm(valor); // Usa o novo motor
+    labelResultado->setText("Resultado: " + QString::number(cm, 'f', 4) + " cm");
+    motor.salvarNoLog(valor, "pol", cm, "cm");
+}
 };
 
 int main(int argc, char *argv[]) {
