@@ -1,46 +1,57 @@
-#include <QApplication>// Inclui a classe QApplication
-#include <QWidget>      // Inclui a classe QWidget
-#include <QVBoxLayout>// Inclui a classe QVBoxLayout
-#include <QLineEdit>// Inclui a classe QLineEdit
-#include <QPushButton>// Inclui a classe QPushButton
-#include <QLabel>// Inclui a classe QLabel
-#include <QMessageBox>// Inclui a classe QMessageBox
-#include "conversores.h"// Inclui a classe Conversor
+#include <QApplication>
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QLabel>
+#include <QMessageBox>
+#include "conversores.h"
 
 class JanelaConversor : public QWidget {
     Conversor motor;
-    QLineEdit *campoEntrada;// Campo de entrada de texto
-    QLabel *labelResultado;// Label para mostrar o resultado
+    QLineEdit *campoEntrada;
+    QLabel *labelResultado;
 
-public:// Construtor
+public:
     JanelaConversor() {
-        setWindowTitle("PCP Conversor Técnico");
+        aplicarEstilo(); // Agora o compilador encontra esta função
+        setWindowTitle("Conversor Técnico");
         
-        campoEntrada = new QLineEdit(this);// Campo de entrada
+        campoEntrada = new QLineEdit(this);
         campoEntrada->setPlaceholderText("Digite o valor (ex: 25,4)");
         
-        QPushButton *btnParaPol = new QPushButton("Converter para Polegadas", this);// Botão de conversão
+        QPushButton *btnParaPol = new QPushButton("Converter para Polegadas", this);
         QPushButton *btnParaMm = new QPushButton("Converter para Milímetros", this);
-        labelResultado = new QLabel("Resultado: ", this);// Label de resultado
+        labelResultado = new QLabel("Resultado: ", this);
 
-        QVBoxLayout *layout = new QVBoxLayout(this);// Layout vertical
+        QVBoxLayout *layout = new QVBoxLayout(this);
         layout->addWidget(new QLabel("Insira a medida:"));
-        layout->addWidget(campoEntrada);// Adiciona o campo de entrada ao layout
-        layout->addWidget(btnParaPol);// Adiciona o botão ao layout
-        layout->addWidget(btnParaMm);// Adiciona o botão ao layout
-        layout->addWidget(labelResultado);// Adiciona o label ao layout
+        layout->addWidget(campoEntrada);
+        layout->addWidget(btnParaPol);
+        layout->addWidget(btnParaMm);
+        layout->addWidget(labelResultado);
 
-        // Conexões de eventos
-        connect(btnParaPol, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaPol);// Liga o clique do botão ao slot
-        connect(btnParaMm, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaMm);// Liga o clique do botão ao slot
-        connect(campoEntrada, &QLineEdit::returnPressed, this, &JanelaConversor::aoConverterParaPol);// Enter também converte para polegadas
+        connect(btnParaPol, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaPol);
+        connect(btnParaMm, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaMm);
+        connect(campoEntrada, &QLineEdit::returnPressed, this, &JanelaConversor::aoConverterParaPol);
+    } // Fim do Construtor
+
+private:
+    void aplicarEstilo() {
+        this->setStyleSheet(
+            "QWidget { background-color: #1e1e1e; color: #ffffff; font-family: 'Segoe UI', Arial; }"
+            "QLineEdit { background-color: #2d2d2d; border: 2px solid #3d3d3d; border-radius: 5px; padding: 8px; }"
+            "QPushButton { background-color: #0078d4; color: white; border-radius: 5px; padding: 10px; font-weight: bold; }"
+            "QPushButton:hover { background-color: #2b88d8; }"
+            "QLabel { font-size: 15px; margin-top: 10px; color: #ffffff; }"
+        );
     }
 
 private slots:
     void aoConverterParaPol() {
-        QString entradaStr = campoEntrada->text();// Obtém o texto do campo de entrada
+        QString entradaStr = campoEntrada->text();
         bool ok;
-        double valor = entradaStr.replace(",", ".").toDouble(&ok);//    Converte para double
+        double valor = entradaStr.replace(",", ".").toDouble(&ok);
         
         if (!ok || entradaStr.isEmpty()) {
             QMessageBox::warning(this, "Erro", "Digite um número válido.");
@@ -48,7 +59,7 @@ private slots:
         }
 
         double pol = motor.mmParaPol(valor);
-        labelResultado->setText("Resultado: " + QString::number(pol, 'f', 4) + " pol"); // Atualiza o label com o resultado
+        labelResultado->setText("Resultado: " + QString::number(pol, 'f', 4) + " pol");
         motor.salvarNoLog(valor, "mm", pol, "pol");
     }
 
@@ -66,11 +77,11 @@ private slots:
         labelResultado->setText("Resultado: " + QString::number(mm, 'f', 4) + " mm");
         motor.salvarNoLog(valor, "pol", mm, "mm");
     }
-}; // Fim da classe com ponto e vírgula
+};
 
 int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);// Cria a aplicação Qt
-    JanelaConversor janela;// Cria a janela do conversor
-    janela.show();// Exibe a janela
-    return app.exec();// Inicia o loop de eventos
+    QApplication app(argc, argv);
+    JanelaConversor janela;
+    janela.show();
+    return app.exec();
 }

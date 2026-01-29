@@ -286,11 +286,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "ConversorPCP_autogen::@6890427a1f51a3e7e1df"
+			"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "ConversorPCP_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ConversorPCP::@6890427a1f51a3e7e1df",
@@ -379,6 +379,9 @@
 	"orderDependencies" : 
 	[
 		{
+			"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -387,9 +390,6 @@
 		{
 			"backtrace" : 0,
 			"id" : "ConversorPCP_autogen::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 
