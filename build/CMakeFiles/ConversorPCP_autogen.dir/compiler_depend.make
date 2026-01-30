@@ -210,6 +210,19 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
   /opt/homebrew/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-release.cmake \
   /opt/homebrew/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
   /opt/homebrew/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-release.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlTargets-release.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+  /opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake \
   /opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake \
   /opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginConfig.cmake \
   /opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets-release.cmake \
@@ -359,6 +372,18 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
 
 /opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets-release.cmake:
 
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-release.cmake:
+
 /opt/homebrew/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake:
 
 /opt/homebrew/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-release.cmake:
@@ -402,6 +427,8 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake:
 
 /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlTargets-release.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
 
@@ -481,6 +508,8 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake:
 
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake:
+
 /opt/homebrew/lib/cmake/Qt6Core/Qt6QDarwinMicrophonePermissionPluginTargets.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
@@ -507,6 +536,8 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
 
 /opt/homebrew/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
 
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake:
+
 /opt/homebrew/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake:
@@ -528,6 +559,8 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
 /opt/homebrew/lib/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake:
 
 /opt/homebrew/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake:
 
@@ -613,6 +646,8 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake:
 
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake:
+
 /opt/homebrew/lib/cmake/Qt6Core/Qt6QDarwinContactsPermissionPluginAdditionalTargetInfo.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake:
@@ -656,6 +691,8 @@ ConversorPCP_autogen/timestamp: /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-C
 CMakeFiles/4.2.2/CMakeCXXCompiler.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Core/Qt6QDarwinCalendarPermissionPluginAdditionalTargetInfo.cmake:
 
@@ -754,6 +791,8 @@ CMakeFiles/4.2.2/CMakeSystem.cmake:
 /opt/homebrew/lib/cmake/Qt6/QtFeatureCommon.cmake:
 
 /opt/homebrew/lib/cmake/Qt6/QtPublicPluginHelpers.cmake:
+
+/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake:
 

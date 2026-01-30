@@ -1003,4 +1003,35 @@ CMakeFiles/ConversorPCP.dir/main.cpp.o: \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qdialog.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h \
-  /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-CONVERSOR.CPP/conversores.h
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QDialog \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QTableWidget \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qtablewidget.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qtableview.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qabstractitemview.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/qabstractitemmodel.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/qitemselectionmodel.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qstyleoption.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qabstractspinbox.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/qvalidator.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/qregularexpression.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qslider.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qabstractslider.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qstyle.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qtabbar.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qtabwidget.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qrubberband.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QHeaderView \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qheaderview.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/QSqlQuery \
+  /opt/homebrew/lib/QtSql.framework/Headers/qsqlquery.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/qtsqlglobal.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/qtsql-config.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/qtsqlexports.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/qsqldatabase.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/qmetaobject.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/QSqlError \
+  /opt/homebrew/lib/QtSql.framework/Headers/qsqlerror.h \
+  /Users/gabrieltissi/Geral\ do\ gabriel/PROJETO-CONVERSOR.CPP/conversores.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/QSqlDatabase

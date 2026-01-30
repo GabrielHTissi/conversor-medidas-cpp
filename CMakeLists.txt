@@ -6,7 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets sql)
 
 # Adiciona os seus arquivos ao projeto
 add_executable(ConversorPCP
@@ -16,4 +16,4 @@ add_executable(ConversorPCP
 )
 
 # Conecta o seu código com as bibliotecas de interface do Qt
-target_link_libraries(ConversorPCP PRIVATE Qt6::Widgets)
+target_link_libraries(ConversorPCP PRIVATE Qt6::Widgets Qt6::Sql)

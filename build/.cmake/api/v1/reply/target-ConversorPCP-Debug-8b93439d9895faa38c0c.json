@@ -190,6 +190,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "Qt6::Widgets::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Qt6::Sql::@6890427a1f51a3e7e1df"
 		}
 	],
 	"compileGroups" : 
@@ -213,6 +217,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"define" : "QT_SQL_LIB"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "QT_WIDGETS_LIB"
 				}
 			],
@@ -232,6 +240,11 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/opt/homebrew/lib/QtGui.framework"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtSql.framework"
 				}
 			],
 			"includes" : 
@@ -264,6 +277,11 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/opt/homebrew/lib/QtGui.framework/Headers"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtSql.framework/Headers"
 				}
 			],
 			"language" : "CXX",
@@ -286,11 +304,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "ConversorPCP_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ConversorPCP::@6890427a1f51a3e7e1df",
@@ -317,6 +335,11 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "/opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/homebrew/lib/QtSql.framework/Versions/A/QtSql",
 				"role" : "libraries"
 			},
 			{
@@ -372,12 +395,20 @@
 		{
 			"backtrace" : 2,
 			"id" : "Qt6::Widgets::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Qt6::Sql::@6890427a1f51a3e7e1df"
 		}
 	],
 	"name" : "ConversorPCP",
 	"nameOnDisk" : "ConversorPCP",
 	"orderDependencies" : 
 	[
+		{
+			"backtrace" : 0,
+			"id" : "ConversorPCP_autogen::@6890427a1f51a3e7e1df"
+		},
 		{
 			"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
@@ -386,10 +417,6 @@
 		},
 		{
 			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 0,
-			"id" : "ConversorPCP_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 

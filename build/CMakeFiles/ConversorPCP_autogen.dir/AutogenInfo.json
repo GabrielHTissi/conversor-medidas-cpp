@@ -376,7 +376,22 @@
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets.cmake",
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets-release.cmake",
 		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake",
-		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake"
+		"/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake",
+		"/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlTargets-release.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
+		"/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-release.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
+		"/opt/homebrew/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP",
 	"CROSS_CONFIG" : false,
@@ -394,7 +409,7 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/ConversorPCP_autogen/include",
 	"MOC_COMPILATION_FILE" : "/Users/gabrieltissi/Geral do gabriel/PROJETO-CONVERSOR.CPP/build/ConversorPCP_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_SQL_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -412,6 +427,8 @@
 		"/opt/homebrew/include",
 		"/opt/homebrew/lib/QtGui.framework/Headers",
 		"/opt/homebrew/lib/QtGui.framework",
+		"/opt/homebrew/lib/QtSql.framework/Headers",
+		"/opt/homebrew/lib/QtSql.framework",
 		"/usr/local/include",
 		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
 		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include",

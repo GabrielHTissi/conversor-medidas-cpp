@@ -4,7 +4,41 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
+#include <QDateTime>
 
+bool Conversor::configurarBancoDados() {
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("historico_pcp.db");
+
+    if (!db.open()) return false;
+
+    QSqlQuery query;
+    // Cria a tabela se ela não existir
+    return query.exec("CREATE TABLE IF NOT EXISTS conversoes ("
+                      "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                      "data_hora TEXT, "
+                      "valor_origem REAL, "
+                      "unidade_origem TEXT, "
+                      "valor_destino REAL, "
+                      "unidade_destino TEXT)");
+}
+
+void Conversor::salvarNoBanco(double vOrigem, std::string uOrigem, double vDestino, std::string uDestino) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO conversoes (data_hora, valor_origem, unidade_origem, valor_destino, unidade_destino) "
+                  "VALUES (:data, :vO, :uO, :vD, :uD)");
+    
+    query.bindValue(":data", QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"));
+    query.bindValue(":vO", vOrigem);
+    query.bindValue(":uO", QString::fromStdString(uOrigem));
+    query.bindValue(":vD", vDestino);
+    query.bindValue(":uD", QString::fromStdString(uDestino));
+    
+    query.exec();
+}
+// Implementação dos métodos da classe Conversor
 double Conversor::processarEntrada(std::string texto) {
     std::replace(texto.begin(), texto.end(), ',', '.');
     try {
@@ -18,19 +52,11 @@ double Conversor::cmParaPol(double cm) {
 }
 
 double Conversor::polParaCm(double pol) {
-    return pol * 2.54;
+    return pol * 2.54; // Cálculo direto para polegadas
 }
-
+// Métodos de conversão entre mm e polegadas
 double Conversor::mmParaPol(double mm) { return mm / FATOR; }
 double Conversor::polParaMm(double pol) { return pol * FATOR; }
-
-void Conversor::limparTela() {
-    #ifdef _WIN32
-        std::system("cls");
-    #else
-        std::system("clear");
-    #endif
-}
 
 void Conversor::salvarNoLog(double vOrigem, std::string uOrigem, double vDestino, std::string uDestino) {
     std::ofstream arquivoLog("historico.txt", std::ios::app);

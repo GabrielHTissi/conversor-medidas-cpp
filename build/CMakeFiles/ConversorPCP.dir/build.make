@@ -135,6 +135,7 @@ ConversorPCP: CMakeFiles/ConversorPCP.dir/main.cpp.o
 ConversorPCP: CMakeFiles/ConversorPCP.dir/conversores.cpp.o
 ConversorPCP: CMakeFiles/ConversorPCP.dir/build.make
 ConversorPCP: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
+ConversorPCP: /opt/homebrew/lib/QtSql.framework/Versions/A/QtSql
 ConversorPCP: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 ConversorPCP: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 ConversorPCP: CMakeFiles/ConversorPCP.dir/link.txt

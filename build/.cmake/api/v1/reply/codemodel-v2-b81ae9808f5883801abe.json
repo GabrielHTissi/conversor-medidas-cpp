@@ -272,6 +272,13 @@
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "Qt6::QSQLiteDriverPlugin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt6__QSQLiteDriverPlugin-Debug-b19f2b50844fb95f08cf.json",
+					"name" : "Qt6::QSQLiteDriverPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "Qt6::QSvgIconPlugin::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Qt6__QSvgIconPlugin-Debug-801461e5a53eb1f53142.json",
 					"name" : "Qt6::QSvgIconPlugin",
@@ -324,6 +331,13 @@
 					"id" : "Qt6::QWebpPlugin::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Qt6__QWebpPlugin-Debug-7db52af58e5c55c871a3.json",
 					"name" : "Qt6::QWebpPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Qt6::Sql::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt6__Sql-Debug-8effd012cb25b0e6d18a.json",
+					"name" : "Qt6::Sql",
 					"projectIndex" : 0
 				},
 				{
@@ -665,7 +679,9 @@
 						78,
 						79,
 						80,
-						81
+						81,
+						82,
+						83
 					],
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-9ad1a58d4644cf6543fa.json",
@@ -770,7 +786,9 @@
 						78,
 						79,
 						80,
-						81
+						81,
+						82,
+						83
 					],
 					"directoryIndexes" : 
 					[
@@ -790,7 +808,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ConversorPCP::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ConversorPCP-Debug-33d0d6c5dcbb0b644b23.json",
+					"jsonFile" : "target-ConversorPCP-Debug-8b93439d9895faa38c0c.json",
 					"name" : "ConversorPCP",
 					"projectIndex" : 0
 				},
@@ -804,7 +822,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ConversorPCP_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ConversorPCP_autogen_timestamp_deps-Debug-948c9bde10652cbc2e44.json",
+					"jsonFile" : "target-ConversorPCP_autogen_timestamp_deps-Debug-a2a04c52ff72f4f75d4b.json",
 					"name" : "ConversorPCP_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
