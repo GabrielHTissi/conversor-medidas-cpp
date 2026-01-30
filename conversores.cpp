@@ -54,6 +54,14 @@ double Conversor::cmParaPol(double cm) {
 double Conversor::polParaCm(double pol) {
     return pol * 2.54; // Cálculo direto para polegadas
 }
+double Conversor::pesoBarraQuadrada(double lado, double comprimento, double densidade) {
+    // Volume em mm³ / 1.000.000 = Volume em cm³
+    return (lado * lado * comprimento * densidade) / 1000000.0;
+}
+
+double Conversor::pesoChapa(double largura, double comprimento, double espessura, double densidade) {
+    return (largura * comprimento * espessura * densidade) / 1000000.0;
+}
 // Métodos de conversão entre mm e polegadas
 double Conversor::mmParaPol(double mm) { return mm / FATOR; }
 double Conversor::polParaMm(double pol) { return pol * FATOR; }

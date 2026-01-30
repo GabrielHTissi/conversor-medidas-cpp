@@ -19,6 +19,9 @@ public:
     void limparTela(); // Limpa a tela do console
     void salvarNoLog(double vOrigem, std::string uOrigem, double vDestino, std::string uDestino); // Salva a conversão no log
     void salvarNoBanco(double vOrigem, std::string uOrigem, double vDestino, std::string uDestino);
+    double pesoBarraQuadrada(double ladoA, double comprimentoC, double densidade);
+    double pesoChapa(double largura, double comprimento, double espessura, double densidade);
+    double pesoBarraRedonda(double diametro, double comprimento, double densidade);
 };
 
 #endif
