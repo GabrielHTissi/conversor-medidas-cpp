@@ -76,6 +76,10 @@ private:
         connect(btnHistorico, &QPushButton::clicked, this, &JanelaConversor::mostrarHistorico);
         connect(btnExportar, &QPushButton::clicked, this, &JanelaConversor::exportarParaCSV);
         connect(campoEntrada, &QLineEdit::returnPressed, this, &JanelaConversor::aoConverterParaPol);
+        btnParaPol->setToolTip("Converte o valor de Milímetros para Polegadas");
+        btnParaMm->setToolTip("Converte o valor de Polegadas para Milímetros");
+        btnExportar->setToolTip("Gera um arquivo .csv com todo o histórico do banco de dados");
+        inputLado->setToolTip("Insira a medida do lado da barra em milímetros");
     }
 
     void setupAbaPeso(QWidget *aba) {
@@ -216,6 +220,16 @@ private slots:
             QMessageBox::information(this, "Sucesso", "Histórico exportado com sucesso!");
         }
     }
+    campoEntrada->setFocus(); // O cursor já nasce piscando pronto para o trabalho
+    QPushButton *btnLimpar = new QPushButton("Limpar Campos", aba);
+layout->addWidget(btnLimpar);
+
+// Conexão rápida (usando Lambda do C++):
+connect(btnLimpar, &QPushButton::clicked, this, [=]() {
+    campoEntrada->clear();
+    labelResultado->setText("Resultado: ");
+});
+
 };
 
 int main(int argc, char *argv[]) {
