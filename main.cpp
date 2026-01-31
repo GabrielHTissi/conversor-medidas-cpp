@@ -7,12 +7,12 @@
 #include <QMessageBox>
 #include <QDialog>
 #include <QTableWidget>
-#include <QTableWidgetItem> // ADICIONADO: Necessário para as células da tabela
+#include <QTableWidgetItem> 
 #include <QHeaderView>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
 #include <QFileDialog>
-#include <QFile>            // ADICIONADO: Necessário para manipulação de arquivos
+#include <QFile>            
 #include <QTextStream>
 #include <QTabWidget> 
 #include "conversores.h"
@@ -27,10 +27,9 @@ class JanelaConversor : public QWidget {
 public:
     JanelaConversor() {
         aplicarEstilo();
-        setWindowTitle("PCP Conversor Técnico");
+        setWindowTitle("PCP Conversor Técnico - MHM");
         setMinimumSize(500, 600);
 
-        // Layout principal que contém as abas
         QVBoxLayout *mainLayout = new QVBoxLayout(this);
         QTabWidget *abas = new QTabWidget(this);
 
@@ -43,7 +42,10 @@ public:
         abas->addTab(abaConversor, "Conversor de Medidas");
         abas->addTab(abaPeso, "Cálculo de Peso");
 
-        mainLayout->addWidget(abas);        
+        mainLayout->addWidget(abas);   
+
+        // O foco deve ser a última coisa no construtor
+        campoEntrada->setFocus();     
     }
 
 private:
@@ -58,6 +60,7 @@ private:
         QPushButton *btnParaCm = new QPushButton("Converter para Centímetros", aba);
         QPushButton *btnHistorico = new QPushButton("Ver Histórico", aba);
         QPushButton *btnExportar = new QPushButton("Exportar CSV", aba);
+        QPushButton *btnLimpar = new QPushButton("Limpar Campos", aba); // Novo botão
         
         labelResultado = new QLabel("Resultado: ", aba);
 
@@ -68,23 +71,34 @@ private:
         layout->addWidget(btnParaCm);
         layout->addWidget(btnHistorico);
         layout->addWidget(btnExportar);
+        layout->addWidget(btnLimpar);
         layout->addWidget(labelResultado);
 
+        // Conexões
         connect(btnParaPol, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaPol);
         connect(btnParaMm, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaMm);
         connect(btnParaCm, &QPushButton::clicked, this, &JanelaConversor::aoConverterParaCm);
         connect(btnHistorico, &QPushButton::clicked, this, &JanelaConversor::mostrarHistorico);
         connect(btnExportar, &QPushButton::clicked, this, &JanelaConversor::exportarParaCSV);
         connect(campoEntrada, &QLineEdit::returnPressed, this, &JanelaConversor::aoConverterParaPol);
-        btnParaPol->setToolTip("Converte o valor de Milímetros para Polegadas");
-        btnParaMm->setToolTip("Converte o valor de Polegadas para Milímetros");
-        btnExportar->setToolTip("Gera um arquivo .csv com todo o histórico do banco de dados");
-        inputLado->setToolTip("Insira a medida do lado da barra em milímetros");
+        
+        // Conexão Lambda para Limpar
+        connect(btnLimpar, &QPushButton::clicked, this, [=]() {
+            campoEntrada->clear();
+            labelResultado->setText("Resultado: ");
+            campoEntrada->setFocus();
+        });
+
+        // Tooltips (UX profissional para a Meitech ver)
+        btnParaPol->setToolTip("Converte Milímetros para Polegadas");
+        btnParaMm->setToolTip("Converte Polegadas para Milímetros");
+        btnExportar->setToolTip("Exporta o histórico do banco de dados para CSV");
+        btnLimpar->setToolTip("Limpa as entradas desta aba");
     }
 
     void setupAbaPeso(QWidget *aba) {
         QVBoxLayout *layout = new QVBoxLayout(aba);
-        layout->addWidget(new QLabel("Cálculo para Barra Quadrada (Aço Carbono):"));
+        layout->addWidget(new QLabel("Cálculo para Barra Quadrada (Aço):"));
         
         inputLado = new QLineEdit(aba);
         inputLado->setPlaceholderText("Lado A (mm)");
@@ -101,16 +115,20 @@ private:
         layout->addWidget(btnCalcular);
         layout->addWidget(labelPeso);
 
+        // Tooltips da Aba Peso
+        inputLado->setToolTip("Insira a medida do lado da barra em mm");
+        btnCalcular->setToolTip("Calcula o peso baseado na densidade do Aço (7.85)");
+
         connect(btnCalcular, &QPushButton::clicked, this, &JanelaConversor::aoCalcularPeso);
     }
 
     void aplicarEstilo() {
         this->setStyleSheet(
             "QWidget { background-color: #1e1e1e; color: #ffffff; font-family: 'Segoe UI', Arial; }"
-            "QTabWidget::pane { border: 1px solid #3d3d3d; top: -1px; }"
+            "QTabWidget::pane { border: 1px solid #3d3d3d; }"
             "QTabBar::tab { background: #2d2d2d; padding: 12px; min-width: 150px; border: 1px solid #3d3d3d; }"
-            "QTabBar::tab:selected { background: #0078d4; border-bottom-color: #0078d4; }"
-            "QLineEdit { background-color: #2d2d2d; border: 2px solid #3d3d3d; border-radius: 5px; padding: 8px; font-size: 14px; }"
+            "QTabBar::tab:selected { background: #0078d4; border-bottom: 2px solid #00ff00; }"
+            "QLineEdit { background-color: #2d2d2d; border: 2px solid #3d3d3d; border-radius: 5px; padding: 8px; }"
             "QPushButton { background-color: #0078d4; color: white; border-radius: 5px; padding: 10px; font-weight: bold; margin-top: 5px; }"
             "QPushButton:hover { background-color: #2b88d8; }"
             "QLabel { font-size: 14px; margin-top: 5px; color: #ffffff; }"
@@ -126,11 +144,10 @@ private slots:
         double comp = inputComp->text().replace(",", ".").toDouble(&ok2);
 
         if (ok1 && ok2) {
-            // Cálculo: (Lado * Lado * Comprimento * Densidade do Aço) / 1.000.000
             double peso = motor.pesoBarraQuadrada(lado, comp, 7.85); 
             labelPeso->setText("Peso Estimado: " + QString::number(peso, 'f', 2) + " kg");
         } else {
-            QMessageBox::warning(this, "Erro de Input", "Certifique-se de inserir apenas números nos campos de medida.");
+            QMessageBox::warning(this, "Erro", "Digite valores numéricos válidos.");
         }
     }
 
@@ -138,39 +155,33 @@ private slots:
         QString entradaStr = campoEntrada->text();
         bool ok;
         double valor = entradaStr.replace(",", ".").toDouble(&ok);
-        if (!ok || entradaStr.isEmpty()) {
-            QMessageBox::warning(this, "Erro", "Digite um número válido.");
-            return;
+        if (ok && !entradaStr.isEmpty()) {
+            double pol = motor.mmParaPol(valor);
+            labelResultado->setText("Resultado: " + QString::number(pol, 'f', 4) + " pol");
+            motor.salvarNoBanco(valor, "mm", pol, "pol");
         }
-        double pol = motor.mmParaPol(valor);
-        labelResultado->setText("Resultado: " + QString::number(pol, 'f', 4) + " pol");
-        motor.salvarNoBanco(valor, "mm", pol, "pol");
     }
 
     void aoConverterParaMm() {
         QString entradaStr = campoEntrada->text();
         bool ok;
         double valor = entradaStr.replace(",", ".").toDouble(&ok);
-        if (!ok || entradaStr.isEmpty()) {
-            QMessageBox::warning(this, "Erro", "Digite um número válido.");
-            return;
+        if (ok && !entradaStr.isEmpty()) {
+            double mm = motor.polParaMm(valor);
+            labelResultado->setText("Resultado: " + QString::number(mm, 'f', 4) + " mm");
+            motor.salvarNoBanco(valor, "pol", mm, "mm");
         }
-        double mm = motor.polParaMm(valor);
-        labelResultado->setText("Resultado: " + QString::number(mm, 'f', 4) + " mm");
-        motor.salvarNoBanco(valor, "pol", mm, "mm");
     }
 
     void aoConverterParaCm() {
         QString entradaStr = campoEntrada->text();
         bool ok;
         double valor = entradaStr.replace(",", ".").toDouble(&ok);
-        if (!ok || entradaStr.isEmpty()) {
-            QMessageBox::warning(this, "Erro", "Digite um número válido.");
-            return;
+        if (ok && !entradaStr.isEmpty()) {
+            double cm = motor.polParaCm(valor);
+            labelResultado->setText("Resultado: " + QString::number(cm, 'f', 4) + " cm");
+            motor.salvarNoBanco(valor, "pol", cm, "cm");
         }
-        double cm = motor.polParaCm(valor);
-        labelResultado->setText("Resultado: " + QString::number(cm, 'f', 4) + " cm");
-        motor.salvarNoBanco(valor, "pol", cm, "cm");
     }
 
     void mostrarHistorico() {
@@ -194,7 +205,6 @@ private slots:
             tabela->setItem(linha, 3, new QTableWidgetItem(query.value(3).toString()));
             linha++;
         }
-
         layoutLog->addWidget(tabela);
         janelaLog.exec();
     }
@@ -207,37 +217,22 @@ private slots:
         if (arquivo.open(QIODevice::WriteOnly | QIODevice::Text)) {
             QTextStream out(&arquivo);
             out << "Data/Hora;Valor Origem;Unidade Origem;Valor Destino;Unidade Destino\n";
-
             QSqlQuery query("SELECT data_hora, valor_origem, unidade_origem, valor_destino, unidade_destino FROM conversoes");
             while (query.next()) {
-                out << query.value(0).toString() << ";"
-                    << query.value(1).toString() << ";"
-                    << query.value(2).toString() << ";"
-                    << query.value(3).toString() << ";"
+                out << query.value(0).toString() << ";" << query.value(1).toString() << ";"
+                    << query.value(2).toString() << ";" << query.value(3).toString() << ";"
                     << query.value(4).toString() << "\n";
             }
             arquivo.close();
-            QMessageBox::information(this, "Sucesso", "Histórico exportado com sucesso!");
+            QMessageBox::information(this, "Sucesso", "Arquivo exportado com sucesso!");
         }
     }
-    campoEntrada->setFocus(); // O cursor já nasce piscando pronto para o trabalho
-    QPushButton *btnLimpar = new QPushButton("Limpar Campos", aba);
-layout->addWidget(btnLimpar);
-
-// Conexão rápida (usando Lambda do C++):
-connect(btnLimpar, &QPushButton::clicked, this, [=]() {
-    campoEntrada->clear();
-    labelResultado->setText("Resultado: ");
-});
-
 };
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     Conversor meuConversor;
-    if (!meuConversor.configurarBancoDados()) {
-        QMessageBox::critical(nullptr, "Erro de Banco", "Não foi possível abrir o banco de dados.");
-    }
+    meuConversor.configurarBancoDados();
     JanelaConversor janela;
     janela.show();
     return app.exec();
